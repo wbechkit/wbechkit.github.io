@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Walid Bechkit – Full Professor, Université Lumière Lyon 2</title>
+<meta name="description" content="Walid Bechkit, Full Professor of Computer Science at Université Lumière Lyon 2 (ICOM, ERIC laboratory). Sensor networks for air quality monitoring, drone fleets, energy-efficient machine learning, goal-oriented communication.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F6F8F9; --panel:#EBF0F2; --ink:#16212B; --muted:#56636F;
+  --rule:#D5DEE3; --accent:#1F6680; --accent-soft:#D6E7EE;
+  --serif:"Newsreader",Georgia,"Times New Roman",serif;
+  --sans:"IBM Plex Sans",-apple-system,"Segoe UI",Roboto,Arial,sans-serif;
+}
+@media (prefers-color-scheme:dark){
+  :root{--paper:#12191F; --panel:#18222A; --ink:#E4EAEE; --muted:#9AA8B3;
+        --rule:#2A3843; --accent:#7DB9CF; --accent-soft:#1E3440;}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font:1.075rem/1.65 var(--serif);
+  -webkit-font-smoothing:antialiased}
+a{color:var(--accent);text-decoration-thickness:1px;text-underline-offset:3px}
+a:hover{text-decoration-thickness:2px}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+
+.layout{display:grid;grid-template-columns:20rem minmax(0,1fr);min-height:100vh}
+
+/* ---- Sidebar ---- */
+.side{position:sticky;top:0;height:100vh;overflow-y:auto;background:var(--panel);
+  border-right:1px solid var(--rule);padding:2.25rem 2rem 2rem;font-family:var(--sans);font-size:.9rem}
+.plume{position:relative;margin:-2.25rem -2rem 1.25rem;padding:2.25rem 2rem 0;overflow:hidden}
+.plume svg{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.plume svg ellipse{fill:none;stroke:var(--accent);stroke-width:1}
+.photo{position:relative;width:6.5rem;height:6.5rem;border-radius:50%;object-fit:cover;
+  border:3px solid var(--paper);display:block;margin-bottom:1rem;background:var(--accent-soft)}
+.side h1{position:relative;font:600 1.9rem/1.1 var(--serif);margin:0 0 .5rem;letter-spacing:-.01em}
+.role{position:relative;margin:0 0 1.5rem;color:var(--muted);line-height:1.5}
+.role strong{color:var(--ink);font-weight:600}
+nav ul{list-style:none;margin:0 0 1.75rem;padding:0;border-top:1px solid var(--rule)}
+nav li{border-bottom:1px solid var(--rule)}
+nav a{display:block;padding:.45rem 0;color:var(--ink);text-decoration:none}
+nav a:hover{color:var(--accent)}
+.contact{color:var(--muted);line-height:1.55;margin-bottom:1.5rem}
+.contact p{margin:0 0 .6rem}
+.also{font-size:.8rem;color:var(--muted);border-top:1px solid var(--rule);padding-top:1rem;line-height:1.5;margin:0}
+
+/* ---- Main ---- */
+main{padding:1.5rem clamp(1.5rem,5vw,4.5rem) 4rem;max-width:60rem}
+main p,main li{text-align:justify;hyphens:auto;-webkit-hyphens:auto}
+section{margin-bottom:2rem;scroll-margin-top:1.5rem}
+h2{font:500 1.75rem/1.2 var(--serif);margin:0 0 1.25rem;padding-bottom:.5rem;border-bottom:2px solid var(--ink)}
+h3{font:600 1rem/1.3 var(--sans);margin:2rem 0 .75rem;color:var(--ink)}
+h2+h3{margin-top:0}
+p{margin:0 0 1rem}
+.lead{font-size:1.25rem;line-height:1.5}
+ul.plain{list-style:none;padding:0;margin:0}
+ul.plain>li{padding:.7rem 0;border-bottom:1px solid var(--rule)}
+ul.plain>li:first-child{padding-top:0}
+.meta{font:.85rem/1.5 var(--sans);color:var(--muted)}
+.tag{font:500 .72rem/1 var(--sans);background:var(--accent-soft);color:var(--accent);
+  padding:.25rem .5rem;border-radius:3px;white-space:nowrap;display:inline-block;margin-top:.3rem}
+
+/* News */
+.news{display:grid;grid-template-columns:7.5rem 1fr;gap:.25rem 1.5rem;padding:1rem 0;border-bottom:1px solid var(--rule)}
+.news:first-of-type{padding-top:0}
+.news time{font:500 .85rem/1.7 var(--sans);color:var(--accent)}
+.news h4{font:600 1.1rem/1.35 var(--serif);margin:0 0 .25rem}
+.news p{margin:0;color:var(--muted)}
+
+/* Teaching table */
+.courses{width:100%;border-collapse:collapse;font-size:1rem}
+.courses td{padding:.55rem 0;border-bottom:1px solid var(--rule);vertical-align:top}
+.courses td:first-child{padding-right:1.5rem}
+.courses td:last-child{font:.85rem/1.8 var(--sans);color:var(--muted);width:50%}
+
+/* Publications */
+.pubs li{padding:.6rem 0}
+.pubs .authors{display:block;color:var(--muted);font-size:.95rem}
+.pubs .me{color:var(--ink);font-weight:600}
+.pubs .title{font-weight:400}
+.pubs .venue{font-style:normal;font-weight:600;color:var(--ink)}
+.pub-links{font:.85rem var(--sans);color:var(--muted);margin-bottom:1rem}
+
+footer{font:.8rem var(--sans);color:var(--muted);border-top:1px solid var(--rule);padding-top:1rem}
+
+/* ---- Mobile ---- */
+@media (max-width:860px){
+  .layout{grid-template-columns:1fr}
+  .side{position:static;height:auto;border-right:0;border-bottom:1px solid var(--rule)}
+  nav ul{display:flex;flex-wrap:wrap;gap:0 1.1rem;border:0}
+  nav li{border:0}
+  main{padding-top:2.25rem}
+  .news{grid-template-columns:1fr}
+  .courses td{display:block;border:0;padding:0}
+  .courses tr{display:block;padding:.55rem 0;border-bottom:1px solid var(--rule)}
+  .courses td:last-child{width:auto}
+}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- ============================================================
+     BARRE LATÉRALE : photo, nom, poste, menu, contact
+     ============================================================ -->
+<aside class="side">
+  <div class="plume">
+    <svg viewBox="0 0 320 220" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <g transform="rotate(-18 230 70)">
+        <ellipse cx="238" cy="62" rx="22" ry="12" opacity=".55"/>
+        <ellipse cx="226" cy="66" rx="48" ry="26" opacity=".42"/>
+        <ellipse cx="212" cy="71" rx="80" ry="42" opacity=".3"/>
+        <ellipse cx="196" cy="77" rx="118" ry="60" opacity=".2"/>
+        <ellipse cx="178" cy="84" rx="162" ry="82" opacity=".12"/>
+      </g>
+    </svg>
+    <img class="photo" src="photo.jpg" alt="Portrait of Walid Bechkit" onerror="this.style.display='none'">
+    <h1>Walid Bechkit</h1>
+    <p class="role"><strong>Full Professor of Computer Science</strong><br>
+      Université Lumière Lyon 2<br>
+      ERIC laboratory, LeaD team<br>
+      Institute of Communication (ICOM)</p>
+  </div>
+
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#supervision">Supervision</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#responsibilities">Responsibilities</a></li>
+      <li><a href="#cv">Education &amp; career</a></li>
+    </ul>
+  </nav>
+
+  <div class="contact">
+    <p><a href="mailto:walid.bechkit@univ-lyon2.fr">walid.bechkit@univ-lyon2.fr</a></p>
+    <p>Université Lumière Lyon 2<br>Campus Porte des Alpes<br>5 avenue Pierre Mendès France<br>69676 Bron Cedex, France</p>
+  </div>
+
+  <p class="also">Also adjunct professor at INSA Lyon, Telecommunications department.</p>
+</aside>
+
+<main>
+
+<!-- ============================================================
+     PRÉSENTATION
+     ============================================================ -->
+<section id="about">
+  <h2>About</h2>
+  <p class="lead">I am a Full Professor (Professeur des universités) of computer science
+    at Université Lumière Lyon 2 (ICOM), where I am a member of the Learning and Decision 
+    research team (LeaD, ERIC laboratory).
+     I head the first year of
+    the work-study Master's programme in computer science.</p>
+<p>My research lies at the intersection of networking and applied machine learning. 
+  I work on low-cost wireless sensor networks for monitoring physical phenomena, 
+  cooperative drone fleets for mobile sensing, energy-efficient machine learning for 
+  resource-constrained devices, and data-aware, goal-oriented communication.</p>
+ <p>From 2013 to 2025, I was Associate Professor at INSA Lyon (Telecommunications 
+  department, CITI laboratory, Inria Agora team), where I still teach as adjunct
+    professor. I received my PhD in computer science from Université de 
+    Technologie de Compiègne in 2012 and my
+     engineering degree from ESI Algiers in 2009, both with distinction.</p>
+</section>
+
+
+<!-- ============================================================
+     ACTUALITÉS
+     ============================================================ -->
+<section id="news">
+  <h2>News</h2>
+
+  <article class="news">
+    <time datetime="2026-07-06">6 July 2026</time>
+    <div>
+      <h4>PhD defence of Anaïs Boumendil</h4>
+      <p>Anaïs successfully defended her PhD thesis, “Towards energy-efficient machine learning models for resource-constrained platforms”. Congratulations, Anaïs!</p>
+    </div>
+  </article>
+
+  <article class="news">
+    <time datetime="2026-02-26">26 February 2026</time>
+    <div>
+      <h4>PhD defence of Mohamed Sami Assenine</h4>
+      <p>Sami successfully defended his PhD thesis, “Reinforcement learning for mobility optimization in WSNs: application to pollution monitoring using drone fleets”. Congratulations, Sami!</p>
+    </div>
+  </article>
+
+  <article class="news">
+    <time datetime="2026-01">January 2026</time>
+    <div>
+     <h4>Research stay at MIT</h4>
+<p>I was honoured to spend a research stay at MIT, in particular at the Mechatronics Research Laboratory (MRL), where I was hosted by Prof. Kamal Youcef-Toumi. During my stay, I gave a seminar 
+  and we laid the groundwork for future collaboration.</p>
+    </div>
+  </article>
+
+  <article class="news">
+    <time datetime="2025-12">1 December 2025</time>
+    <div>
+      <h4>Welcome to Simon Weinberger</h4>
+      <p>Simon joined us as a postdoctoral researcher under my supervision, to work on reinforcement learning for application-aware, self-adaptive communication protocols.</p>
+    </div>
+  </article>
+
+  <article class="news">
+    <time datetime="2025-09">1 September 2025</time>
+    <div>
+      <h4>Joining Université Lumière Lyon 2</h4>
+      <p>I joined Université Lumière Lyon 2 as a Full Professor. Many thanks to ICOM and the ERIC laboratory for their warm welcome. 
+        My teaching now focuses on computer science and machine learning, while machine learning applied to networking and sensing remains at the core of my research. 
+        I am deeply grateful to INSA Lyon for twelve rewarding years, and I keep close ties with the institution, where I continue to teach in the Telecommunications department.</p>
+    </div>
+  </article>
+
+</section>
+
+
+<!-- ============================================================
+     RECHERCHE
+     ============================================================ -->
+<section id="research">
+  <h2>Research</h2>
+  <h3>Current topics</h3>
+  <ul class="plain">
+    <li><strong>Data-aware and goal-oriented communication.</strong> Adaptive access and communication schemes that account for the value of the data being sent.</li>
+    <li><strong>UAV networks for monitoring highly dynamic pollution plumes.</strong> Spatio-temporal prediction architectures and reinforcement-learning-based path planning for drone fleets.</li>
+    <li><strong>Energy-efficient neural networks for resource-constrained platforms.</strong> Evaluation and comparison of pruning, data selection and growing networks; new data selection methods.</li>
+    <li><strong>Deployment and scheduling of sensor networks for air quality monitoring.</strong> Phenomenon-aware models for sensor placement and scheduling.</li>
+    <li><strong>Low-cost sensor platforms for air quality monitoring.</strong> Deployed in Lyon (2018), on an onshore industrial site (since 2019) and on an offshore industrial site (since 2021).</li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     PROJETS
+     ============================================================ -->
+<section id="projects">
+  <h2>Projects</h2>
+  <h3>As coordinator</h3>
+  <ul class="plain">
+    <li><strong>ANR DRON-MAP</strong> <span class="meta">(ANR JCJC, 2021–2026, about €300k)</span><br>Drone fleets for monitoring pollution plumes in emergencies. Partners: CITI (Agora, Chroma), LMFA.</li>
+    <li><strong>3M'Air</strong> <span class="meta">(Labex IMU, 2018–2022, about €200k)</span><br>Urban participatory sensing with connected sensors. Partners: CITI, LMFA, EVS, Atmo AURA, Ville de Lyon, Météo-France, Lyon Météo.</li>
+    <li><strong>Industrial collaboration with TotalEnergies</strong> <span class="meta">(since 2018, about €120k)</span><br>Industrial applications of wireless sensor networks.</li>
+    <li><strong>BQI</strong> <span class="meta">(INSA Lyon / INSAVALOR, 2019, about €15k)</span><br>Bringing our air quality sensor platform up to industrial requirements.</li>
+    <li><strong>UrPolSens</strong> <span class="meta">(Labex IMU, 2015–2018, about €200k)</span><br>Wireless sensor networks for urban pollution monitoring. Partners: CITI, LMFA, IFSTTAR, EVS, TUBA, Atmo AURA.</li>
+    <li><strong>Capt-PolAir</strong> <span class="meta">(PEPS CNRS / Université de Lyon, 2016, about €23k)</span><br>Practical issues of sensor network deployment for air quality monitoring.</li>
+  </ul>
+  <h3>As partner (selection)</h3>
+  <ul class="plain">
+    <li><strong>PEPR Future Networks, PC6 FITNESS</strong> <span class="meta">(2023–2028)</span><br>Data-driven adaptive access for dense networks. Task leader.</li>
+    <li><strong>Scientific chair INSA Lyon / Spie ICS</strong> <span class="meta">(2022–2026)</span><br>AI for behavioural analysis of flows in digital infrastructures. Co-coordinator of the embedded AI axis.</li>
+    <li><strong>Scientific chair INSA Lyon / Atmo AURA</strong> <span class="meta">(since 2020)</span><br>Air quality, health, innovation and citizen engagement.</li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     ENCADREMENTS
+     ============================================================ -->
+<section id="supervision">
+  <h2>Supervision</h2>
+  <h3>PhD theses (defended)</h3>
+  <ul class="plain">
+    <li><strong>Anaïs Boumendil</strong> <span class="meta">(INSA-Lyon, France, 2022–2026)</span><br>Towards energy-efficient machine learning models for resource-constrained platforms. <span class="meta">With P.-E. Portier, F. Le Mouël and M. Egan.</span></li>
+    <li><strong>Mohamed Sami Assenine</strong> <span class="meta">(INSA-Lyon, France, 2022–2026)</span><br>Reinforcement learning for mobility optimization in wireless sensor networks. <span class="meta">With H. Rivano.</span></li>
+    <li><strong>Ichrak Mokhtari</strong> <span class="meta">(INSA-Lyon, France, 2019–2023)</span><br>Spatio-temporal data analysis for dynamic phenomenon monitoring using mobile sensors. <span class="meta">With H. Rivano.</span></li>
+    <li><strong>Mohamed Anis Fekih</strong> <span class="meta">(INSA-Lyon, France, 2018–2022)</span><br>Low-cost wireless sensor networks in participatory air quality monitoring. <span class="meta">With H. Rivano.</span><br><span class="tag">INSA Lyon thesis award 2023</span></li>
+    <li><strong>Ahmed Boubrima</strong> <span class="meta">(INSA-Lyon, France, 2015–2019)</span><br>Deployment and scheduling of wireless sensor networks for air pollution monitoring. <span class="meta">With H. Rivano.</span><br><span class="tag">GDR RSD thesis award 2020</span> <span class="tag">INSA Lyon thesis award 2020</span> <span class="tag">SIF Gilles Kahn award, accessit 2019</span></li>
+    <li><strong>Sami Abdellatif</strong> <span class="meta">(Biskra University, Algeria, 2017–2023)</span><br>Device-to-device communications in post-disaster situations. <span class="meta">With A. Bachir and O. Tibermacine.</span></li>
+    <li><strong>Abdessamed Sassi</strong> <span class="meta">(Biskra University, Algeria, 2014–2022)</span><br>Internet services based on users' mobility profiles. <span class="meta">With A. Bachir.</span></li>
+  </ul>
+
+  <h3>Postdoctoral researchers and research engineers</h3>
+  <ul class="plain">
+    <li><strong>Simon Weinberger</strong>, postdoctoral researcher <span class="meta">(since December 2025)</span><br>Reinforcement learning for application-aware, self-adaptive communication protocols.</li>
+    <li><strong>Alexandros Sidiras-Galante</strong>, research engineer <span class="meta">(2021–2024)</span><br>Optimization and industrial transfer of our air quality sensor platforms.</li>
+    <li><strong>Manoël Dahan</strong>, research engineer <span class="meta">(2018–2021)</span><br>Design and development of autonomous low-cost sensor networks for air quality monitoring.</li>
+  </ul>
+
+  <h3>Internships and student projects</h3>
+ <p>Since 2014, I have supervised about fifteen Master's and double-degree engineering internships, as well as dozens of R&amp;D, final-year and introductory research projects.</p>
+</section>
+
+<!-- ============================================================
+     PUBLICATIONS
+     ============================================================ -->
+<section id="publications">
+  <h2>Publications</h2>
+  <p class="pub-links">Selected journal articles. Full list on <a href="https://dblp.uni-trier.de/pid/39/8734.html" target="_blank" rel="noopener noreferrer">DBLP</a> 
+    and <a href="https://scholar.google.com/citations?user=S9g75CIAAAAJ&hl=fr" target="_blank" rel="noopener noreferrer">Google Scholar</a>.</p>
+
+  <ul class="plain pubs">
+    <li><span class="authors">A. Boumendil, <span class="me">W. Bechkit</span>, K. Benatchba.</span> <span class="title">On-device deep learning: survey on techniques improving energy efficiency of DNNs.</span> <br> <span class="venue">IEEE Transactions on Neural Networks and Learning Systems</span> 36(5): 7806–7821, 2025.</li>
+    <li><span class="authors">A. Boubrima, <span class="me">W. Bechkit</span>, H. Rivano, L. Soulhac.</span> <span class="title">UrMapSens: joint mapping-sensing design of WSNs for urban environmental monitoring.</span> <br> <span class="venue">IEEE Sensors Journal</span> 24: 37894–37905, 2024.</li>
+    <li><span class="authors">M. S. Assenine, <span class="me">W. Bechkit</span>, I. Mokhtari, H. Rivano, K. Benatchba.</span> <span class="title">Cooperative deep reinforcement learning for dynamic pollution plume monitoring using a drone fleet.</span> <br> <span class="venue">IEEE Internet of Things Journal</span> 11(5): 7325–7338, 2024.</li>
+    <li><span class="authors">S. Abdellatif, O. Tibermacine, <span class="me">W. Bechkit</span>, A. Bachir.</span> <span class="title">Heterogeneous IoT/LTE ProSe virtual infrastructure for disaster situations.</span> <br> <span class="venue">Journal of Network and Computer Applications</span> 213: 103602, 2023.</li>
+    <li><span class="authors">M. A. Fekih, <span class="me">W. Bechkit</span>, H. Rivano, M. Dahan, F. Renard, L. Alonso, F. Pineau.</span> <span class="title">Participatory air quality and urban heat islands monitoring system.</span> <br> <span class="venue">IEEE Transactions on Instrumentation and Measurement</span> 70: 1–14, 2021.</li>
+    <li><span class="authors">A. Boubrima, <span class="me">W. Bechkit</span>, H. Rivano.</span> <span class="title">On the deployment of wireless sensor networks for air quality mapping: optimization models and algorithms.</span> <br> <span class="venue">IEEE/ACM Transactions on Networking</span> 27(4): 1629–1642, 2019.</li>
+    <li><span class="authors">A. Boubrima, <span class="me">W. Bechkit</span>, H. Rivano.</span> <span class="title">Optimal WSN deployment models for air pollution monitoring.</span> <br> <span class="venue">IEEE Transactions on Wireless Communications</span> 16(5): 2723–2735, 2017.</li>
+    <li><span class="authors">A. Bachir, <span class="me">W. Bechkit</span>, Y. Challal, A. Bouabdallah.</span> <span class="title">Joint connectivity-coverage temperature-aware algorithms for wireless sensor networks.</span> <br> <span class="venue">IEEE Transactions on Parallel and Distributed Systems</span> 26(7): 1923–1936, 2015.</li>
+    <li><span class="authors"><span class="me">W. Bechkit</span>, Y. Challal, A. Bouabdallah, V. Tarokh.</span> <span class="title">A highly scalable key pre-distribution scheme for wireless sensor networks.</span> <br> <span class="venue">IEEE Transactions on Wireless Communications</span> 12(2): 948–959, 2013.</li>
+    <li><span class="authors">A. Bachir, <span class="me">W. Bechkit</span>, Y. Challal, A. Bouabdallah.</span> <span class="title">Temperature-aware density optimization for low power wireless sensor networks.</span> <br> <span class="venue">IEEE Communications Letters</span> 17(2): 325–328, 2013.</li>
+    <li><span class="authors"><span class="me">W. Bechkit</span>, Y. Challal, A. Bouabdallah.</span> <span class="title">A new class of hash-chain based key pre-distribution schemes for WSN.</span> <br> <span class="venue">Computer Communications</span> 36(3): 243–255, 2013.</li>
+  </ul>
+</section>
+
+<!-- ============================================================
+     ENSEIGNEMENT
+     ============================================================ -->
+<section id="teaching">
+  <h2>Teaching</h2>
+  <h3>Université Lumière Lyon 2 (since 2025)</h3>
+  <table class="courses">
+    <tr><td>Deep learning</td><td>Master 2 Machine Learning and Artificial Intelligence (MALIA)</td></tr>
+    <tr><td>Supervised machine learning</td><td>Master 1 Computer Science</td></tr>
+    <tr><td>Advanced Python and object-oriented programming</td><td>Master 1 Computer Science</td></tr>
+    <tr><td>Advanced databases</td><td>Master 1 Computer Science</td></tr>
+    <tr><td>Compilation and lexical analysis</td><td>Licence 3 Computer Science</td></tr>
+    <tr><td>Algorithms and object-oriented programming</td><td>Licence 3 Computer Science</td></tr>
+  </table>
+
+  <h3>INSA Lyon, Telecommunications department (2013–2025, main courses)</h3>
+  <table class="courses">
+    <tr><td>Wireless network architecture and security</td><td>Engineering programme (M2 level), Telecommunications</td></tr>
+    <tr><td>Performance evaluation</td><td>Engineering programme (M1 level), Telecommunications</td></tr>
+    <tr><td>Network architectures and protocols</td><td>Engineering programme (M1 level), Telecommunications</td></tr>
+    <tr><td>Introduction to networking</td><td>Engineering programme (L3 level), Telecommunications</td></tr>
+    <tr><td>Introduction to wireless sensor networks</td><td>Engineering programme (L2 level)</td></tr>
+     </table>
+
+<h3>Professional training (since 2020)</h3>
+<table class="courses">
+  <tr><td>Neural networks and deep learning: an in-depth understanding to design, train and deploy models</td><td>Intensive training for engineers and data scientists (upcoming)</td></tr>
+  <tr><td>IoT networks with LoRa and LoRaWAN: architecture, protocols and deployment</td><td>Intensive training for engineers from various companies</td></tr>
+  <tr><td>Industrial cybersecurity: vulnerabilities and system hardening</td><td>Intensive training for engineers from various companies</td></tr>
+  <tr><td>IP and wireless networks: protocols, architecture and security</td><td>Intensive training for engineers from various companies</td></tr>
+</table>
+
+  <h3>Université de Technologie de Compiègne (2009–2013)</h3>
+  <table class="courses">
+    <tr><td>Computer networks</td><td>Engineering programme</td></tr>
+    <tr><td>Wireless sensor networks</td><td>Engineering programme</td></tr>
+    <tr><td>Operating systems</td><td>Engineering programme</td></tr>
+    <tr><td>Data structures and algorithms</td><td>Engineering programme</td></tr>
+    <tr><td>Combinatorial optimization</td><td>Engineering programme</td></tr>
+  </table>
+</section>
+
+<!-- ============================================================
+     RESPONSABILITÉS
+     ============================================================ -->
+<section id="responsibilities">
+  <h2>Responsibilities</h2>
+  <h3>Current</h3>
+  <ul class="plain">
+    <li>Head of the first year of the work-study Master's in computer science (M1 Informatique en alternance), Université Lumière Lyon 2.</li>
+  </ul>
+  <h3>Previously, at INSA Lyon and the CITI laboratory (selection)</h3>
+  <ul class="plain">
+    <li>Head of the networking teaching group, Telecommunications department (2018–2025).</li>
+    <li>Head of admissions, Telecommunications department (2014–2019).</li>
+    <li>Elected member of the Telecommunications department council (2015–2019 and 2020–2024).</li>
+    <li>Seminar coordinator, CITI laboratory (2013–2021).</li>
+    <li>Appointed member of the Fédération Informatique de Lyon council (2018–2021).</li>
+    <li>Co-organizer of the ResCom thematic day on communications in smart cities, Sophia Antipolis (2017).</li>
+  </ul>
+
+</section>
+
+<!-- ============================================================
+     FORMATION ET CARRIÈRE
+     ============================================================ -->
+<section id="cv">
+  <h2>Education &amp; career</h2>
+  <ul class="plain">
+    <li><strong>Full Professor</strong>, Université Lumière Lyon 2, Institute of Communication (ICOM) and ERIC laboratory <span class="meta">(since 2025)</span></li>
+    <li><strong>Habilitation à diriger des recherches (HDR)</strong>, INSA Lyon <span class="meta">(May 2024)</span><br>Contributions to wireless sensor networks for air quality monitoring.</li>
+    <li><strong>Associate Professor</strong> (Maître de conférences), INSA Lyon, Telecommunications department and CITI laboratory <span class="meta">(2013–2025)</span></li>
+    <li><strong>PhD in computer science</strong>, Université de Technologie de Compiègne, Heudiasyc laboratory (UMR CNRS 7253) <span class="meta">(November 2012)</span><br>Security and energy saving in wireless sensor networks.<br><span class="tag">Guy Deniélou best thesis award 2013</span></li>
+    <li><strong>Engineering degree in computer science</strong>, École nationale supérieure d'informatique (ESI), Algiers <span class="meta">(2009)</span><br><span class="tag">Valedictorian, ranked first all five years</span></li>
+  </ul>
+</section>
+
+<footer>
+  Last updated September 2026.
+</footer>
+
+</main>
+</div>
+</body>
+</html>
